@@ -25,7 +25,7 @@ void main()
 
     vec4 texturecolor = texture(tex, fragtex);
 
-    outputColor = texturecolor + (cursorcolor * smoothstep(0.2,1.0,dist));
+    outputColor = texturecolor + (cursorcolor * smoothstep(0.0,1.0,dist));
 }
 
 /*
