@@ -25,7 +25,7 @@ in vec4 position;
 in vec2 texcoord;
 in vec3 normal;
 
-out vec4 eposition;
+out vec3 eposition;
 out vec3 fnormal;
 out vec3 diffuseColor;
 out vec3 ambientColor;
@@ -40,13 +40,10 @@ void main(){
     // Position in clip space
       gl_Position = modelViewProjectionMatrix * position;
 
-      // Position in eye space
-    eposition = modelViewMatrix * position;
-
-      // Normal in eye space
-    fnormal = mat3(modelViewMatrix) * normal;
-
+      fnormal = vec3(modelViewMatrix * vec4(normal, 0.0));
+        eposition = vec3(modelViewMatrix * position);
+    
     fragtex = texcoord;
-    lightpos = cursor;
+    lightpos = vec3(modelViewMatrix * vec4(cursor,0.0));
 }
 

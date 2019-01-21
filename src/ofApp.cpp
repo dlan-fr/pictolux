@@ -23,10 +23,10 @@ void ofApp::setup(){
 
     img.load("assets/scene.png");
 
-    cursor_pos.set(0,0,0);
+    //cursor_pos.set(0,0,0);
+    cursor_pos.set(-4,4.24,-2.16);
 
-    shader.load("shaders/shader");
-
+    shader.load("shaders/perpixel");
 
 
 }
